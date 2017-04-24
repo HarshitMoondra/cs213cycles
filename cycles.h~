@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class cycles
+class Cycles
 {
 	private:
 		string Owner;
@@ -26,7 +26,6 @@ class cycles
 	int rentHours(time_returned,time_taken);		//return no. of hours
 	void setOwner(string Owner);
 	time storeTimeTaken();
-	
 
 
 
