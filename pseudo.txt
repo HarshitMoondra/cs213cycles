@@ -1,0 +1,147 @@
+"Welcome to Peer-to-Peer Cycle Shop
+1.Sign In
+2.Sign Up"
+
+
+
+
+
+----------Sign Up---------
+
+//print("your user id is : ")
+//print(userid.++)
+Your User ID is <index>
+Name:
+Hostel No.:
+LDAP ID:
+Password:
+Confirm Password:
+if (Confirm Password != Password)
+	Re enter Password,ConfirmPassword;
+else
+	Save it in database;
+
+---------Sign In------------
+Present Location:
+USER ID:
+Password:
+if (user id not found)
+	wrong user id , password "Please sign up if not already signed up"
+else if (entered_password != password)
+	"wrong password" ;
+else 
+	show the list 					//Main Menu
+"1.Rent a cycle
+2.Return a cycle
+3.Add Cycle
+4.Remove Cycle
+5.Donate Cycle
+6.Update time	(only for owners)
+7.Payment
+8.Sign Out"
+
+--------------Rent a cycle------------
+if (user == owner) 														//Add blacklist condition
+	if (user.cycleID present in that hostel)
+		"Take your cycle and go motherfucker"
+	else
+		"Do you want to rent a cycle?"
+		if ("Yes")
+		[[	Print list of cycles in that hostel;		//those cycles (hostel == N)&&(user == NULL)
+								//List contains
+								Cycle ID
+								Time at which cycle has to be returned
+								Rent
+			<Cycle chosen by specifying the Cycle ID>
+			UPDATE	1.Time taken	(in cycles class)
+					2.User]]
+		else if("No")
+			Sign Out
+else
+[[	Print list of cycles in that hostel;		//those cycles (hostel == N)&&(user == NULL)
+							//List contains
+							Cycle ID
+							Time at which cycle has to be returned
+							Rent
+	<Cycle chosen by specifying the Cycle ID>
+	UPDATE	1.Time taken	(in cycles class)
+			2.User ]]
+
+--------------Return a cycle-----------
+if(user == owner)
+	if(User.CycleOwnedID == Cycle ID)
+		UPDATE	1.Location	(in cycles class)
+				2.latestTimeByWhichCycleIsToBeReturned
+	else
+	[[	UPDATE 	1.Time returned //cycle 			//owner but not his cycle
+				2.Location		//cycle
+				Ask for any damages
+				3.Payment ( += rent_per_hour*no.of hours + fine(damages) + extra_hours_fine( = extra_hours*2*rent_per_hour))	//user
+				//Blacklist condition (if payment >= SpecificAmount
+													"Pay before")]]
+else
+[[	UPDATE 	1.Time returned //cycle 				//user
+			2.Location		//cycle
+			Ask for any damages
+			3.Payment ( += rent_per_hour*no.of hours + fine(damages) + extra_hours_fine( = extra_hours*2*rent_per_hour))	//user
+			//Blacklist condition (if payment >= SpecificAmount
+												"Pay before")
+
+------------------Add Cycle-----------------
+							//Assume user has only 1 cycle
+if(User.CycleOwnedID != NULL)
+	"Return/donate first";
+else
+	UPDATE 	1.Cycle Owned ID 	//user 											
+			2.Cycle ID added in Cycle class
+			3.Location (= HostelNo.)
+			4.Owner
+			5.latestTimeByWhichCycleIsToBeReturned
+
+
+
+------------------Remove Cycle--------------------
+								user wants his cycle back
+if(User.CycleOwnedID == NULL)
+	"You don't have a cycle bitch";
+else
+	UPDATE 	1.Cycle Owned ID == NULL	//user 											
+			2.Cycle ID removed in Cycle class 				//somehow remove stuff
+			3.Location (= HostelNo.)
+			4.Owner
+			5.latestTimeByWhichCycleIsToBeReturned
+
+
+------------------Donate Cycle--------------------
+								for last year students
+if(User.CycleOwnedID == NULL)
+	"You don't have a cycle bitch";
+else
+	UPDATE 	1.Cycle Owned ID == NULL	//user 											
+			2.Cycle ID 				
+			3.Location (= HostelNo.)
+			4.Owner = "Shop"
+			5.latestTimeByWhichCycleIsToBeReturned = 24				//renew after 24 (see whether all can be updated or not......else keep it infinity)
+
+------------------Update Time---------------------
+if (user != owner)
+	Main Menu;
+else
+	UPDATE 	1. latestTimeByWhichCycleIsToBeReturned
+
+------------------Payment-----------------------
+if ((Amount > SpecificAmount) && Paid!!!!) 				//what if I pay only have the rate
+	Blacklisted = false;
+	Amount = 0;
+else if(Paid!!)
+	Amount = 0;
+
+
+
+
+-------------Sign Out------------------------
+clear all!!
+go to Sign In screen
+
+
+

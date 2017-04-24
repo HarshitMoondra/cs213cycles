@@ -1,0 +1,6 @@
+#include "cycles.h"
+
+Cycles::rentHours(time_returned,time_taken)
+{
+
+}
