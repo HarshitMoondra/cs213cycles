@@ -1,6 +1,6 @@
 #include "cycles.h"
 
-cycles::rentHours(time_returned,time_taken)
+cycles::rentHours(time time_returned,time time_taken)
 {
 
 }

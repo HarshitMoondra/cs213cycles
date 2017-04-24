@@ -6,12 +6,12 @@ using namespace std;
 class cycles
 {
 	private:
-		string Owner;
-		string ID;
+		string owner;
+		string id;
 		string user;
-		int location;
+		string location;
 		int latestTimeByWhichCycleIsToBeReturned;
-		int rent_per_hour;
+		const int rent_per_hour=10;
 		struct time		//dekh le kuch toh
 		{
 			int year;
@@ -23,12 +23,14 @@ class cycles
 		time time_returned;
 		//string condition;
 	public:
-	int rentHours(time_returned,time_taken);		//return no. of hours
-	void setOwner(string Owner);
+	cycles(string owner,string id,string user, string location){
+		owner=owner;
+		id=id;
+		user=user;
+		location=location;
+	};
+	int rentHours(time time_returned,time time_taken);		//return no. of hours
+	//void setOwner(string Owner);
 	time storeTimeTaken();
 	
-
-
-
-
 }
